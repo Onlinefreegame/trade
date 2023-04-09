@@ -1,33 +1,66 @@
+/* Reset styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styles */
 body {
-    background-color: #141414;
-    color: #00ff00;
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+}
+
+/* Table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #555;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Button styles */
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+  /* Table styles */
+  th,
+  td {
+    font-size: 14px;
   }
-  
-  h1 {
-    font-size: 2em;
-    text-align: center;
-    margin-top: 1em;
-  }
-  
-  p {
-    font-size: 1.2em;
-    margin: 0.5em 0;
-    text-align: center;
-  }
-  
+
+  /* Button styles */
   button {
-    font-size: 1.2em;
-    background-color: #00ff00;
-    color: #141414;
-    border: none;
-    border-radius: 0.3em;
-    padding: 0.5em;
-    margin-top: 1em;
-    cursor: pointer;
+    font-size: 14px;
   }
-  
-  button:hover {
-    background-color: #141414;
-    color: #00ff00;
-  }
+}
