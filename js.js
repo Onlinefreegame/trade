@@ -12,7 +12,7 @@ async function fetchData() {
     const atrPercent = ((atr / xrpPrice) * 100).toFixed(2);
     const stopLoss = (xrpPrice - atr * 2).toFixed(2);
     const maximumPrice = (xrpPrice + atr * 3).toFixed(2);
-    const riskPercent = ((1-(xrpPrice - stopLoss) / xrpPrice) * 100).toFixed(2);
+    const riskPercent = (((xrpPrice - stopLoss) / xrpPrice) * 100).toFixed(2);
     const profitPercent = (((maximumPrice - xrpPrice) / xrpPrice) * 100).toFixed(2);
 
     let row = table.insertRow(++rowCount);
