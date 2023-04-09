@@ -3,35 +3,20 @@
   <head>
     <title>XRP Price and ATR with Stop Loss and Maximum Price</title>
     <link rel="stylesheet" href="css.css">
-    <script>
-      async function fetchData() {
-        try {
-          const response = await fetch("https://api.binance.com/api/v3/ticker/24hr?symbol=XRPUSDT");
-          const data = await response.json();
-          const xrpPrice = parseFloat(data.lastPrice);
-          const atr = parseFloat(data.highPrice) - parseFloat(data.lowPrice);
-          const atrPercent = ((atr / xrpPrice) * 100).toFixed(2);
-          const stopLoss = (xrpPrice - (atr * 2)).toFixed(2);
-          const maximumPrice = (xrpPrice + (atr * 3)).toFixed(2);
-          
-          document.getElementById("xrp-price").textContent = `₹${(xrpPrice * 74.5).toFixed(2)}`;
-          document.getElementById("atr").textContent = `${atrPercent}%`;
-          document.getElementById("stop-loss").textContent = `₹${(stopLoss * 74.5).toFixed(2)}`;
-          document.getElementById("maximum-price").textContent = `₹${(maximumPrice * 74.5).toFixed(2)}`;
-        } catch (error) {
-          console.log(error);
-        }
-      }
-
-      window.onload = fetchData;
-    </script>
   </head>
   <body>
     <h1>XRP Price and ATR with Stop Loss and Maximum Price</h1>
-    <p>XRP Price: <span id="xrp-price"></span></p>
-    <p>ATR: <span id="atr"></span></p>
-    <p>Stop Loss: <span id="stop-loss"></span></p>
-    <p>Maximum Price: <span id="maximum-price"></span></p>
-    <button onclick="fetchData()">Refresh Data</button>
+    <button id="refresh-data">Refresh Data</button>
+    <table id="data-table">
+      <tr>
+        <th>Date and Time</th>
+        <th>XRP Price</th>
+        <th>ATR</th>
+        <th>Stop Loss</th>
+        <th>Maximum Price</th>
+      </tr>
+    </table>
+
+    <script src="js.js"></script>
   </body>
 </html>
